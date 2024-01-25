@@ -1,7 +1,9 @@
-<div>
-  <h1><%= @user %></h1>
+<h2>User info</h2>
   <%= image_tag @user.get_profile_image(100,100) %>
-  <p><%= link_to "プロフィール編集", @user %></p>
+  <table class="user-info">
+
+  </table>
+  <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
 </div>
 
 <%= @books.each do |book| %>
@@ -13,5 +15,4 @@
   <p><%= book.user.name %></p>
   <p><%= book.title %></p>
   <p><%= book.body %></p>
-</div>
 <% end %>
