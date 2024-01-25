@@ -12,6 +12,9 @@
 
       <tbody>
       <%= @books.each do |book| %>
+      <%= link_to books_path(book.id) do %>
+        <%= image_tag book.get_image %>
+      <% end %>
         <tr>
           <td><%= image_tag 'sample-author1.jpg' %></td>
           <td><%= book.title %></td>
