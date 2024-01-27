@@ -1,26 +1,31 @@
 <%= render 'list', user: @user %>
 
+<div class="container px-5 px-sm-0">
+    <div class="col1-md-3"></div>
+    <div class="col8-md-8 offset-md-1">
+      <h2>Books</h2>
+        <div class="container">
+          <div class="row">
+            <table class="table table-hover table-inverse">
+              <therd>
+                <tr>
+                  <th colspan="1" ></th>
+                  <th>Title</th>
+                  <th>Option</th>
+                </tr>
+              </therd>
 
-<h2>Books</h2>]
-<div class="container">
-  <div class="row">
-    <table class="table">
-      <therd>
-        <tr>
-          <th colspan="1" ></th>
-          <th>Title</th>
-          <th>Option</th>
-        </tr>
-      </therd>
-      <tbody>
-        <tr>
-          <%= @books.each do |book| %>
-            <td><%= image_tag book.user.get_profile_image(100,100) %></td>
-            <td><%= book.title %></td>
-            <td><%= book.body %></td>
-          <% end %>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+              <tbody>
+              <% @books.each do |book| %>
+                <tr>
+                  <td><%= image_tag book.user.get_profile_image(100,100) %></td>
+                  <td><%= book.title %></td>
+                  <td><%= book.body %></td>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
 </div>
