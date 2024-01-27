@@ -2,17 +2,25 @@
 
 
 <h2>Books</h2>]
-  <table class="table">
-    <therd>
-      <th colspan="1" ></th>
-      <th>Title</th>
-      <th>Option</th>
-    </therd>
-    <tbody>
-      <%= @books.each do |book| %>
-      <td><%= image_tag book.user.get_profile_image(100,100) %></td>
-      <td><%= book.title %></td>
-      <td><%= book.body %></td>
-      <% end %>
-    </tbody>
-  </table>
+<div class="container">
+  <div class="row">
+    <table class="table">
+      <therd>
+        <tr>
+          <th colspan="1" ></th>
+          <th>Title</th>
+          <th>Option</th>
+        </tr>
+      </therd>
+      <tbody>
+        <tr>
+          <%= @books.each do |book| %>
+            <td><%= image_tag book.user.get_profile_image(100,100) %></td>
+            <td><%= book.title %></td>
+            <td><%= book.body %></td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
