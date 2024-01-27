@@ -1,18 +1,18 @@
-<h2>User info</h2>
-  <%= image_tag @user.get_profile_image(100,100) %>
-  <table class="user-info">
+<%= render 'list', user: @user %>
 
+
+<h2>Books</h2>]
+  <table class="table">
+    <therd>
+      <th colspan="1" ></th>
+      <th>Title</th>
+      <th>Option</th>
+    </therd>
+    <tbody>
+      <%= @books.each do |book| %>
+      <td><%= image_tag book.user.get_profile_image(100,100) %></td>
+      <td><%= book.title %></td>
+      <td><%= book.body %></td>
+      <% end %>
+    </tbody>
   </table>
-  <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
-</div>
-
-<%= @books.each do |book| %>
-<div>
-  <%= link_to book_path(book.id) do %>
-    <%= image_tag book.get_image %>
-  <% end %>
-  <p><%= image_tag book.user.get_profile_image(100,100) %></p>
-  <p><%= book.user.name %></p>
-  <p><%= book.title %></p>
-  <p><%= book.body %></p>
-<% end %>
